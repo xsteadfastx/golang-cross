@@ -75,7 +75,7 @@ RUN apt-get update -qq && apt-get install -y -q --no-install-recommends \
     gcc-multilib \
     mingw-w64 \
  && rm -rf /var/lib/apt/lists/* \
- && curl -sfL https://install.goreleaser.com/github.com/goreleaser/goreleaser.sh | sh -s -- -b /usr/local/bin \
+ && curl -sfL https://install.goreleaser.com/github.com/goreleaser/goreleaser.sh | sh -s -- -b /usr/local/bin
 
 COPY --from=osx-cross "${OSX_CROSS_PATH}/." "${OSX_CROSS_PATH}/"
 COPY --from=libtool   "${OSX_CROSS_PATH}/." "${OSX_CROSS_PATH}/"
